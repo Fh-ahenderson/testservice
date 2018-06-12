@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DINextRun">
+    <Key>
+      <PropertyRef Name="DINextRunID" />
+    </Key>
+    <Property Name="DINextRunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DIObjectID" Type="int" Nullable="false" />
+    <Property Name="Parameters" Type="varchar(max)" />
+    <Property Name="RunStart" Type="datetime" />
+    <Property Name="RunComplete" Type="datetime" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="ManualRun" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIObject">
+    <Key>
+      <PropertyRef Name="DIObjectID" />
+    </Key>
+    <Property Name="DIObjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DIObjectName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="RefreshInterval" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="masterModelStoreContainer">
+    <EntitySet Name="DINextRun" EntityType="Self.DINextRun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIObject" EntityType="Self.DIObject" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+D:\Work\TestService\TestService\bin\Debug\TestService.exe.config
+D:\Work\TestService\TestService\bin\Debug\TestService.exe
+D:\Work\TestService\TestService\bin\Debug\TestService.pdb
+D:\Work\TestService\TestService\obj\Debug\TestService.ProjectInstaller.resources
+D:\Work\TestService\TestService\obj\Debug\TestService.TestService.resources
+D:\Work\TestService\TestService\obj\Debug\TestService.csproj.GenerateResource.Cache
+D:\Work\TestService\TestService\obj\Debug\TestService.csproj.CoreCompileInputs.cache
+D:\Work\TestService\TestService\obj\Debug\TestService.exe
+D:\Work\TestService\TestService\obj\Debug\TestService.pdb
+D:\Work\TestService\TestService\bin\Debug\EntityFramework.dll
+D:\Work\TestService\TestService\bin\Debug\EntityFramework.SqlServer.dll
+D:\Work\TestService\TestService\bin\Debug\EntityFramework.xml
+D:\Work\TestService\TestService\bin\Debug\EntityFramework.SqlServer.xml
+D:\Work\TestService\TestService\obj\Debug\TestService.csprojResolveAssemblyReference.cache

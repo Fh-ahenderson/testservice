@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DINextRun">
+          <Key>
+            <PropertyRef Name="DINextRunID" />
+          </Key>
+          <Property Name="DINextRunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DIObjectID" Type="int" Nullable="false" />
+          <Property Name="Parameters" Type="varchar(max)" />
+          <Property Name="RunStart" Type="datetime" />
+          <Property Name="RunComplete" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="ManualRun" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIObject">
+          <Key>
+            <PropertyRef Name="DIObjectID" />
+          </Key>
+          <Property Name="DIObjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DIObjectName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="RefreshInterval" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="isDeleted" Type="smallint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DINextRun_DIObject">
+          <End Role="DIObject" Type="Self.DIObject" Multiplicity="1" />
+          <End Role="DINextRun" Type="Self.DINextRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIObject">
+              <PropertyRef Name="DIObjectID" />
+            </Principal>
+            <Dependent Role="DINextRun">
+              <PropertyRef Name="DIObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="DINextRun" EntityType="Self.DINextRun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIObject" EntityType="Self.DIObject" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DINextRun_DIObject" Association="Self.FK_DINextRun_DIObject">
+            <End Role="DIObject" EntitySet="DIObject" />
+            <End Role="DINextRun" EntitySet="DINextRun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DINextRuns" EntityType="masterModel.DINextRun" />
+          <EntitySet Name="DIObjects" EntityType="masterModel.DIObject" />
+          <AssociationSet Name="FK_DINextRun_DIObject" Association="masterModel.FK_DINextRun_DIObject">
+            <End Role="DIObject" EntitySet="DIObjects" />
+            <End Role="DINextRun" EntitySet="DINextRuns" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DINextRun">
+          <Key>
+            <PropertyRef Name="DINextRunID" />
+          </Key>
+          <Property Name="DINextRunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DIObjectID" Type="Int32" Nullable="false" />
+          <Property Name="Parameters" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RunStart" Type="DateTime" Precision="3" />
+          <Property Name="RunComplete" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ManualRun" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="DIObject" Relationship="masterModel.FK_DINextRun_DIObject" FromRole="DINextRun" ToRole="DIObject" />
+        </EntityType>
+        <EntityType Name="DIObject">
+          <Key>
+            <PropertyRef Name="DIObjectID" />
+          </Key>
+          <Property Name="DIObjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DIObjectName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RefreshInterval" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="isDeleted" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="DINextRuns" Relationship="masterModel.FK_DINextRun_DIObject" FromRole="DIObject" ToRole="DINextRun" />
+        </EntityType>
+        <Association Name="FK_DINextRun_DIObject">
+          <End Type="masterModel.DIObject" Role="DIObject" Multiplicity="1" />
+          <End Type="masterModel.DINextRun" Role="DINextRun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIObject">
+              <PropertyRef Name="DIObjectID" />
+            </Principal>
+            <Dependent Role="DINextRun">
+              <PropertyRef Name="DIObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+        <EntitySetMapping Name="DINextRuns">
+            <EntityTypeMapping TypeName="masterModel.DINextRun">
+              <MappingFragment StoreEntitySet="DINextRun">
+                <ScalarProperty Name="ManualRun" ColumnName="ManualRun" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RunComplete" ColumnName="RunComplete" />
+                <ScalarProperty Name="RunStart" ColumnName="RunStart" />
+                <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+                <ScalarProperty Name="DIObjectID" ColumnName="DIObjectID" />
+                <ScalarProperty Name="DINextRunID" ColumnName="DINextRunID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIObjects">
+            <EntityTypeMapping TypeName="masterModel.DIObject">
+              <MappingFragment StoreEntitySet="DIObject">
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RefreshInterval" ColumnName="RefreshInterval" />
+                <ScalarProperty Name="DIObjectName" ColumnName="DIObjectName" />
+                <ScalarProperty Name="DIObjectID" ColumnName="DIObjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

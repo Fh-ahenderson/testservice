@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KovaFischerTestingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="JobRID" />
+          </Key>
+          <Property Name="JobRID" Type="int" Nullable="false" />
+          <Property Name="RevJobRID" Type="int" Nullable="false" />
+          <Property Name="HomeRID" Type="int" Nullable="false" />
+          <Property Name="LotRID" Type="int" Nullable="false" />
+          <Property Name="CommunityRID" Type="int" Nullable="false" />
+          <Property Name="ModelRID" Type="int" Nullable="false" />
+          <Property Name="SlsOrdRID" Type="int" Nullable="false" />
+          <Property Name="CustomerRID" Type="int" Nullable="false" />
+          <Property Name="SpecLevelRID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="JobID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SeqNumber" Type="int" Nullable="false" />
+          <Property Name="DCStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="DCCompleteDate" Type="datetime" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EstComplDate" Type="datetime" Nullable="false" />
+          <Property Name="ComplDate" Type="datetime" Nullable="false" />
+          <Property Name="DataProcStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="RevisionStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="RevisionComments" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PrevStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="JobPhaseRID" Type="int" Nullable="false" />
+          <Property Name="AccProjectID" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccSubAccount" Type="nvarchar" MaxLength="24" Nullable="false" />
+          <Property Name="CountPrepaids" Type="int" Nullable="false" />
+          <Property Name="CountOpenPrepaids" Type="int" Nullable="false" />
+          <Property Name="CostOpenAtClosing" Type="money" Nullable="false" />
+          <Property Name="CostSwept" Type="money" Nullable="false" />
+          <Property Name="ScheduleIsPublic" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="MasterJobRID" Type="int" Nullable="false" />
+          <Property Name="NewPOAllowed" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="NewVPOAllowed" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="NewInvAllowed" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="NewBCAllowed" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="UseSchedule" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="UsePOs" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="UseVPOs" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="UseInvoices" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="UseJobCost" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="BankVndRID" Type="int" Nullable="false" />
+          <Property Name="SlsOrdStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="BldgCostMultiplier" Type="decimal" Precision="24" Scale="6" Nullable="false" />
+          <Property Name="LDUnitRID" Type="int" Nullable="false" />
+          <Property Name="LDProjRID" Type="int" Nullable="false" />
+          <Property Name="LastRevisedDate" Type="datetime" Nullable="false" />
+          <Property Name="CostDate" Type="datetime" Nullable="false" />
+          <Property Name="UseActFromAcc" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="LastSTJobCstStart" Type="datetime" Nullable="false" />
+          <Property Name="LastSTJobCstFinish" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lots">
+          <Key>
+            <PropertyRef Name="LotRID" />
+          </Key>
+          <Property Name="LotRID" Type="int" Nullable="false" />
+          <Property Name="CommunityRID" Type="int" Nullable="false" />
+          <Property Name="SectionRID" Type="int" Nullable="false" />
+          <Property Name="PhaseRID" Type="int" Nullable="false" />
+          <Property Name="BuildingRID" Type="int" Nullable="false" />
+          <Property Name="FilingNumber" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="BlockNumber" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LotNumber" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LotID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="StreetAddress" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ZipCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Handing" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="Foundation" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Garage" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Grade" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LotSize" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="LotPremium" Type="money" Nullable="false" />
+          <Property Name="SlsWshID" Type="nvarchar" MaxLength="21" Nullable="false" />
+          <Property Name="SlsWshIndex" Type="int" Nullable="false" />
+          <Property Name="SlsOrdID" Type="nvarchar" MaxLength="21" Nullable="false" />
+          <Property Name="SlsOrdIndex" Type="int" Nullable="false" />
+          <Property Name="HomeID" Type="nvarchar" MaxLength="21" Nullable="false" />
+          <Property Name="HomeIndex" Type="int" Nullable="false" />
+          <Property Name="JobID" Type="nvarchar" MaxLength="21" Nullable="false" />
+          <Property Name="JobIndex" Type="int" Nullable="false" />
+          <Property Name="DefSeqNumber" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="PendingSlsWshRID" Type="int" Nullable="false" />
+          <Property Name="HoldComment" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SelectionStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="PlatBookVol" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="PlatBookPage" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="LotDim1" Type="decimal" Precision="24" Scale="4" Nullable="false" />
+          <Property Name="LotDim2" Type="decimal" Precision="24" Scale="4" Nullable="false" />
+          <Property Name="HoldEndDate" Type="datetime" Nullable="false" />
+          <Property Name="CN_NCB" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SellerName" Type="nvarchar" MaxLength="120" Nullable="false" />
+          <Property Name="AvailableDate" Type="datetime" Nullable="false" />
+          <Property Name="EstComplDate" Type="datetime" Nullable="false" />
+          <Property Name="ExternalID" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccProjectID" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccSubAccount" Type="nvarchar" MaxLength="24" Nullable="false" />
+          <Property Name="LotCost" Type="money" Nullable="false" />
+          <Property Name="AccCompanyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccJobCompanyID" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccSysStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="PossessionStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="DevelopmentStatus" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="ProfCalcModelRID" Type="int" Nullable="false" />
+          <Property Name="SellerNotes" Type="ntext" Nullable="false" />
+          <Property Name="LDParcelRID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KovaFischerTestingModelStoreContainer">
+          <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lots" EntityType="Self.Lots" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KovaFischerTestingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="JobRID" />
+          </Key>
+          <Property Name="JobRID" Type="Int32" Nullable="false" />
+          <Property Name="RevJobRID" Type="Int32" Nullable="false" />
+          <Property Name="HomeRID" Type="Int32" Nullable="false" />
+          <Property Name="LotRID" Type="Int32" Nullable="false" />
+          <Property Name="CommunityRID" Type="Int32" Nullable="false" />
+          <Property Name="ModelRID" Type="Int32" Nullable="false" />
+          <Property Name="SlsOrdRID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerRID" Type="Int32" Nullable="false" />
+          <Property Name="SpecLevelRID" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JobID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SeqNumber" Type="Int32" Nullable="false" />
+          <Property Name="DCStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DCCompleteDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstComplDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ComplDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataProcStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RevisionStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RevisionComments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrevStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JobPhaseRID" Type="Int32" Nullable="false" />
+          <Property Name="AccProjectID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccSubAccount" Type="String" MaxLength="24" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountPrepaids" Type="Int32" Nullable="false" />
+          <Property Name="CountOpenPrepaids" Type="Int32" Nullable="false" />
+          <Property Name="CostOpenAtClosing" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CostSwept" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ScheduleIsPublic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MasterJobRID" Type="Int32" Nullable="false" />
+          <Property Name="NewPOAllowed" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewVPOAllowed" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewInvAllowed" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewBCAllowed" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UseSchedule" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UsePOs" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UseVPOs" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UseInvoices" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UseJobCost" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankVndRID" Type="Int32" Nullable="false" />
+          <Property Name="SlsOrdStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BldgCostMultiplier" Type="Decimal" Precision="24" Scale="6" Nullable="false" />
+          <Property Name="LDUnitRID" Type="Int32" Nullable="false" />
+          <Property Name="LDProjRID" Type="Int32" Nullable="false" />
+          <Property Name="LastRevisedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CostDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UseActFromAcc" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastSTJobCstStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastSTJobCstFinish" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Lot">
+          <Key>
+            <PropertyRef Name="LotRID" />
+          </Key>
+          <Property Name="LotRID" Type="Int32" Nullable="false" />
+          <Property Name="CommunityRID" Type="Int32" Nullable="false" />
+          <Property Name="SectionRID" Type="Int32" Nullable="false" />
+          <Property Name="PhaseRID" Type="Int32" Nullable="false" />
+          <Property Name="BuildingRID" Type="Int32" Nullable="false" />
+          <Property Name="FilingNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BlockNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotNumber" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StreetAddress" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ZipCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Handing" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Foundation" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Garage" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Grade" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotSize" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotPremium" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SlsWshID" Type="String" MaxLength="21" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SlsWshIndex" Type="Int32" Nullable="false" />
+          <Property Name="SlsOrdID" Type="String" MaxLength="21" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SlsOrdIndex" Type="Int32" Nullable="false" />
+          <Property Name="HomeID" Type="String" MaxLength="21" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HomeIndex" Type="Int32" Nullable="false" />
+          <Property Name="JobID" Type="String" MaxLength="21" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JobIndex" Type="Int32" Nullable="false" />
+          <Property Name="DefSeqNumber" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PendingSlsWshRID" Type="Int32" Nullable="false" />
+          <Property Name="HoldComment" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SelectionStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PlatBookVol" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlatBookPage" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotDim1" Type="Decimal" Precision="24" Scale="4" Nullable="false" />
+          <Property Name="LotDim2" Type="Decimal" Precision="24" Scale="4" Nullable="false" />
+          <Property Name="HoldEndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CN_NCB" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SellerName" Type="String" MaxLength="120" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AvailableDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstComplDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExternalID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccProjectID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccSubAccount" Type="String" MaxLength="24" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LotCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="AccCompanyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccJobCompanyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccSysStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PossessionStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DevelopmentStatus" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfCalcModelRID" Type="Int32" Nullable="false" />
+          <Property Name="SellerNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LDParcelRID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KovaFischerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="Lots" EntityType="Self.Lot" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KovaFischerTestingModelStoreContainer" CdmEntityContainer="KovaFischerEntities">
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="KovaFischerTestingModel.Job">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="JobRID" ColumnName="JobRID" />
+                <ScalarProperty Name="RevJobRID" ColumnName="RevJobRID" />
+                <ScalarProperty Name="HomeRID" ColumnName="HomeRID" />
+                <ScalarProperty Name="LotRID" ColumnName="LotRID" />
+                <ScalarProperty Name="CommunityRID" ColumnName="CommunityRID" />
+                <ScalarProperty Name="ModelRID" ColumnName="ModelRID" />
+                <ScalarProperty Name="SlsOrdRID" ColumnName="SlsOrdRID" />
+                <ScalarProperty Name="CustomerRID" ColumnName="CustomerRID" />
+                <ScalarProperty Name="SpecLevelRID" ColumnName="SpecLevelRID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="SeqNumber" ColumnName="SeqNumber" />
+                <ScalarProperty Name="DCStatus" ColumnName="DCStatus" />
+                <ScalarProperty Name="DCCompleteDate" ColumnName="DCCompleteDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EstComplDate" ColumnName="EstComplDate" />
+                <ScalarProperty Name="ComplDate" ColumnName="ComplDate" />
+                <ScalarProperty Name="DataProcStatus" ColumnName="DataProcStatus" />
+                <ScalarProperty Name="RevisionStatus" ColumnName="RevisionStatus" />
+                <ScalarProperty Name="RevisionComments" ColumnName="RevisionComments" />
+                <ScalarProperty Name="PrevStatus" ColumnName="PrevStatus" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="JobPhaseRID" ColumnName="JobPhaseRID" />
+                <ScalarProperty Name="AccProjectID" ColumnName="AccProjectID" />
+                <ScalarProperty Name="AccSubAccount" ColumnName="AccSubAccount" />
+                <ScalarProperty Name="CountPrepaids" ColumnName="CountPrepaids" />
+                <ScalarProperty Name="CountOpenPrepaids" ColumnName="CountOpenPrepaids" />
+                <ScalarProperty Name="CostOpenAtClosing" ColumnName="CostOpenAtClosing" />
+                <ScalarProperty Name="CostSwept" ColumnName="CostSwept" />
+                <ScalarProperty Name="ScheduleIsPublic" ColumnName="ScheduleIsPublic" />
+                <ScalarProperty Name="MasterJobRID" ColumnName="MasterJobRID" />
+                <ScalarProperty Name="NewPOAllowed" ColumnName="NewPOAllowed" />
+                <ScalarProperty Name="NewVPOAllowed" ColumnName="NewVPOAllowed" />
+                <ScalarProperty Name="NewInvAllowed" ColumnName="NewInvAllowed" />
+                <ScalarProperty Name="NewBCAllowed" ColumnName="NewBCAllowed" />
+                <ScalarProperty Name="UseSchedule" ColumnName="UseSchedule" />
+                <ScalarProperty Name="UsePOs" ColumnName="UsePOs" />
+                <ScalarProperty Name="UseVPOs" ColumnName="UseVPOs" />
+                <ScalarProperty Name="UseInvoices" ColumnName="UseInvoices" />
+                <ScalarProperty Name="UseJobCost" ColumnName="UseJobCost" />
+                <ScalarProperty Name="BankVndRID" ColumnName="BankVndRID" />
+                <ScalarProperty Name="SlsOrdStatus" ColumnName="SlsOrdStatus" />
+                <ScalarProperty Name="BldgCostMultiplier" ColumnName="BldgCostMultiplier" />
+                <ScalarProperty Name="LDUnitRID" ColumnName="LDUnitRID" />
+                <ScalarProperty Name="LDProjRID" ColumnName="LDProjRID" />
+                <ScalarProperty Name="LastRevisedDate" ColumnName="LastRevisedDate" />
+                <ScalarProperty Name="CostDate" ColumnName="CostDate" />
+                <ScalarProperty Name="UseActFromAcc" ColumnName="UseActFromAcc" />
+                <ScalarProperty Name="LastSTJobCstStart" ColumnName="LastSTJobCstStart" />
+                <ScalarProperty Name="LastSTJobCstFinish" ColumnName="LastSTJobCstFinish" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lots">
+            <EntityTypeMapping TypeName="KovaFischerTestingModel.Lot">
+              <MappingFragment StoreEntitySet="Lots">
+                <ScalarProperty Name="LotRID" ColumnName="LotRID" />
+                <ScalarProperty Name="CommunityRID" ColumnName="CommunityRID" />
+                <ScalarProperty Name="SectionRID" ColumnName="SectionRID" />
+                <ScalarProperty Name="PhaseRID" ColumnName="PhaseRID" />
+                <ScalarProperty Name="BuildingRID" ColumnName="BuildingRID" />
+                <ScalarProperty Name="FilingNumber" ColumnName="FilingNumber" />
+                <ScalarProperty Name="BlockNumber" ColumnName="BlockNumber" />
+                <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LotID" ColumnName="LotID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="Handing" ColumnName="Handing" />
+                <ScalarProperty Name="Foundation" ColumnName="Foundation" />
+                <ScalarProperty Name="Garage" ColumnName="Garage" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="LotSize" ColumnName="LotSize" />
+                <ScalarProperty Name="LotPremium" ColumnName="LotPremium" />
+                <ScalarProperty Name="SlsWshID" ColumnName="SlsWshID" />
+                <ScalarProperty Name="SlsWshIndex" ColumnName="SlsWshIndex" />
+                <ScalarProperty Name="SlsOrdID" ColumnName="SlsOrdID" />
+                <ScalarProperty Name="SlsOrdIndex" ColumnName="SlsOrdIndex" />
+                <ScalarProperty Name="HomeID" ColumnName="HomeID" />
+                <ScalarProperty Name="HomeIndex" ColumnName="HomeIndex" />
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="JobIndex" ColumnName="JobIndex" />
+                <ScalarProperty Name="DefSeqNumber" ColumnName="DefSeqNumber" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PendingSlsWshRID" ColumnName="PendingSlsWshRID" />
+                <ScalarProperty Name="HoldComment" ColumnName="HoldComment" />
+                <ScalarProperty Name="SelectionStatus" ColumnName="SelectionStatus" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="PlatBookVol" ColumnName="PlatBookVol" />
+                <ScalarProperty Name="PlatBookPage" ColumnName="PlatBookPage" />
+                <ScalarProperty Name="LotDim1" ColumnName="LotDim1" />
+                <ScalarProperty Name="LotDim2" ColumnName="LotDim2" />
+                <ScalarProperty Name="HoldEndDate" ColumnName="HoldEndDate" />
+                <ScalarProperty Name="CN_NCB" ColumnName="CN_NCB" />
+                <ScalarProperty Name="SellerName" ColumnName="SellerName" />
+                <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+                <ScalarProperty Name="EstComplDate" ColumnName="EstComplDate" />
+                <ScalarProperty Name="ExternalID" ColumnName="ExternalID" />
+                <ScalarProperty Name="AccProjectID" ColumnName="AccProjectID" />
+                <ScalarProperty Name="AccSubAccount" ColumnName="AccSubAccount" />
+                <ScalarProperty Name="LotCost" ColumnName="LotCost" />
+                <ScalarProperty Name="AccCompanyID" ColumnName="AccCompanyID" />
+                <ScalarProperty Name="AccJobCompanyID" ColumnName="AccJobCompanyID" />
+                <ScalarProperty Name="AccSysStatus" ColumnName="AccSysStatus" />
+                <ScalarProperty Name="PossessionStatus" ColumnName="PossessionStatus" />
+                <ScalarProperty Name="DevelopmentStatus" ColumnName="DevelopmentStatus" />
+                <ScalarProperty Name="ProfCalcModelRID" ColumnName="ProfCalcModelRID" />
+                <ScalarProperty Name="SellerNotes" ColumnName="SellerNotes" />
+                <ScalarProperty Name="LDParcelRID" ColumnName="LDParcelRID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

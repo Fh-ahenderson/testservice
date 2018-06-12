@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+    <EntitySetMapping Name="DINextRuns">
+      <EntityTypeMapping TypeName="masterModel.DINextRun">
+        <MappingFragment StoreEntitySet="DINextRun">
+          <ScalarProperty Name="ManualRun" ColumnName="ManualRun" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="RunComplete" ColumnName="RunComplete" />
+          <ScalarProperty Name="RunStart" ColumnName="RunStart" />
+          <ScalarProperty Name="Parameters" ColumnName="Parameters" />
+          <ScalarProperty Name="DIObjectID" ColumnName="DIObjectID" />
+          <ScalarProperty Name="DINextRunID" ColumnName="DINextRunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DIObjects">
+      <EntityTypeMapping TypeName="masterModel.DIObject">
+        <MappingFragment StoreEntitySet="DIObject">
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="RefreshInterval" ColumnName="RefreshInterval" />
+          <ScalarProperty Name="DIObjectName" ColumnName="DIObjectName" />
+          <ScalarProperty Name="DIObjectID" ColumnName="DIObjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
